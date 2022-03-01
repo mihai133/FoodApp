@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
         paddingLeft:25,
         paddingRight:40,
         marginTop:24,
-        fontFamily:'helvetica',
+        fontFamily:'Helvetica',
         fontSize: 32,
         fontWeight:'700',
         lineHeight:38,
