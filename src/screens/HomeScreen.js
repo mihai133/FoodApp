@@ -1,17 +1,15 @@
+
 import React from 'react'
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, Image, TouchableOpacity, Button } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import {Feather} from '@expo/vector-icons'
-import { backgroundColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes'
+import ProductComponent from '../components/Product'
 
-const HomeScreen = ({route}) => {
+const HomeScreen = (props) => {
+    console.log(props)
   return (
     <SafeAreaView style={styles.screen}>
-        <View style={styles.headerLogoMenu}>
-            {/* Menu Button */}
-            <TouchableOpacity >
-                <Feather name='menu' size={34} style={styles.menu}/> 
-            </TouchableOpacity>
+        <View style={styles.headerLogoMenu}>   
             {/* Logo */}
             <TouchableOpacity>
                 <Image source={require('../../assets/Icons/Vector.png')} style={styles.logo}/> 
@@ -22,7 +20,9 @@ const HomeScreen = ({route}) => {
         <Text style={styles.h1}>Find Good food around you</Text>
 
         {/* Search Bar */}
-        
+
+        {/* Product Component */}
+       <ProductComponent navigation={()=> props.navigation.navigate('Product Screen')} />
     </SafeAreaView>
   )
 }
@@ -31,11 +31,11 @@ const styles = StyleSheet.create({
     screen:{
         backgroundColor:'white',
         height:'100%',
-        paddingTop:20,
+        padding:20,
     },
 
     headerLogoMenu:{
-        marginHorizontal:25,
+        
         flexDirection:'row',
         justifyContent:'space-between',
     },
@@ -50,8 +50,7 @@ const styles = StyleSheet.create({
     },
 
     h1:{
-        paddingLeft:25,
-        paddingRight:40,
+        
         marginTop:24,
         fontFamily:'Helvetica',
         fontSize: 32,
