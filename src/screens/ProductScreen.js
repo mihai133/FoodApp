@@ -5,7 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 
-const ProductScreen = () => {
+const ProductScreen = (route) => {
   const navigation = useNavigation()
   return (
     <SafeAreaView style={Styles.safeAreaStyle}>
