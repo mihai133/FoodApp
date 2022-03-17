@@ -1,11 +1,13 @@
 
-import React from 'react'
+import React, {useState} from 'react'
 import { View, Text, StyleSheet, Image, TouchableOpacity, Button, TextInput, StatusBar } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import {Feather} from '@expo/vector-icons'
+import SearchBar from '../components/SearchBar'
 import ProductComponent from '../components/Product'
 
-const HomeScreen = ( {navigation}) => {
+const HomeScreen = ({navigation}) => {
+    const [term, setTerm] = useState('')
+
   return (
     <SafeAreaView style={styles.screen}>
         <StatusBar backgroundColor="#61dafb"/>
@@ -20,10 +22,8 @@ const HomeScreen = ( {navigation}) => {
         <Text style={styles.h1}>Find Good food around you</Text>
 
         {/* Search Bar */}
-        <View style={{marginTop:10 , width:"100%", height: 40, borderRadius:10, alignItems:'center', backgroundColor:'lightgrey', flexDirection:'row'}}>
-            <Feather name='search' size={30} style={{paddingRight:15, paddingLeft:10,}} />
-            <TextInput placeholder='Search for food' style={{height:40, width:"80%"}}/>
-        </View>
+        <SearchBar term={term} onTermChange={(newTerm)=>setTerm(newTerm)}/>
+        <Text>{term}</Text>
         {/* Product Component */}
         {/* Here is going to be a FlatList of Restaurants */}
        <ProductComponent
