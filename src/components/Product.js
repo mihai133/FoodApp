@@ -16,7 +16,11 @@ const ProductComponent = (props) => {
       data={props.results}
       keyExtractor={(result) => result.id}
       renderItem={({ item }) => {
-        return <Text>{item.name}</Text>
+        return (
+          <>
+          <Text>{item.name}</Text>
+          </>
+        )
       }}
     />
     </>

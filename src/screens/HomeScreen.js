@@ -50,7 +50,7 @@ const HomeScreen = ({navigation}) => {
         {/* Here is going to be a FlatList of Restaurants */}
        <ProductComponent
             heading="Best Rated Places"
-            results={filterResultsByPrice('$')}
+            results={filterResultsByRating(4.5)}
             title="Salad Restaurant"
             imageSource={{uri:'https://images.unsplash.com/photo-1602881917760-7379db593981?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2360&q=80'}} 
             navigation={()=> navigation.navigate('Product Screen')} 
