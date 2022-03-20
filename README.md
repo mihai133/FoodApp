@@ -1,6 +1,6 @@
 # FoodApp
 
 
-In this brach i want to update the Product component to show a product photo, a rating and the price
+In this brach i want to update the Search functionality fetching the Yelp API
 
-![Simulator Screen Shot - iPhone 13 - 2022-03-13 at 19 18 08](https://user-images.githubusercontent.com/68776490/158071273-4f53fcb1-2380-4744-ac3a-33cdfeb69f99.png)
+![Simulator Screen Shot - iPhone 13 - 2022-03-17 at 13 32 51](https://user-images.githubusercontent.com/68776490/158800164-7c094654-9531-43b4-bb32-237862d598a8.png)
