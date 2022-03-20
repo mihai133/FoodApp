@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
-import {View, Text, TouchableOpacity, StyleSheet, Image} from 'react-native'
+import {View, Text, TouchableOpacity, StyleSheet, Image, FlatList} from 'react-native'
 import {Feather} from '@expo/vector-icons'
 
 
@@ -8,29 +8,29 @@ const ProductComponent = (props) => {
   console.log(props)
   const navigation = useNavigation()
   return (
-    <TouchableOpacity 
-    onPress={() => navigation.navigate('Product Screen')}
-    style={Styles.touchable}
-    
-    >
-      
-        <Image style={Styles.image} source={props.imageSource} />
-        <View style={Styles.productDescribtion}>
-        
-        {/* title */}
-          <Text style={Styles.productTitle}>{props.title}</Text>
-        
-        {/* rating */}
-          <View style={{flexDirection:'row', paddingRight:20,}}>
-            <Feather name='star' size={20} />
-            <Text style={Styles.productTitle}>{props.rating}</Text>
-          </View>
-        </View>
-    </TouchableOpacity>
+    <>
+    <Text style={Styles.headingStyle}>{props.heading}</Text>
+    <Text>Results: {props.results.length}</Text>
+    <FlatList 
+      horizontal={true}
+      data={props.results}
+      keyExtractor={(result) => result.id}
+      renderItem={({ item }) => {
+        return <Text>{item.name}</Text>
+      }}
+    />
+    </>
   )
 }
 
 const Styles = StyleSheet.create({
+  headingStyle:{
+    fontSize:24,
+    fontWeight:'bold',
+    marginTop:10,
+
+  },
+
     touchable: {
       marginTop:50,
         height: 200,
